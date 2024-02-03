@@ -7,13 +7,9 @@ pipeline {
     }
 
     stages {
-        stage('Clone repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/jchuot/JUnit.git'
-            }
-        }
         stage('Build gradle') {
             steps {
+                git branch: 'main', url: 'https://github.com/jchuot/JUnit.git'
                 sh 'gradle clean build'
             }
         }
