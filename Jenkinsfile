@@ -18,14 +18,14 @@ pipeline {
                 sh 'gradle test'
             }
         }
+    }
 
-       post {
-            success {
-                echo 'ALL TESTS PASSED'
-            }
-            failure {
-                echo 'TEST FAILED'
-            }
-       }
+    post {
+        success {
+            echo 'ALL TESTS PASSED'
+        }
+        failure {
+            echo 'TEST FAILED'
+        }
     }
 }
